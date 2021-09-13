@@ -1,0 +1,45 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* .example-full-width {
+    width: 100%;
+  } */
+
+  .div{
+      padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .example-card {
+      padding-left: 100px;
+    max-width: 300%;
+    
+    
+  }
+  
+
+  .input-width{
+      width: 300%;
+     
+  }
+
+  .toggle{
+      background-color: blue;
+      color: white;
+     
+  }
+
+  .borderradius{
+      border-radius: 5px;
+      width: 100%;
+  }
+
+  .mat-button-toggle{
+   text-align: center;
+    padding: 12px 300px 10px 230px !important
+  }
+
+ 
