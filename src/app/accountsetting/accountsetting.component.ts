@@ -10,7 +10,11 @@ export class AccountsettingComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  
+  visible = true;
+
+  profile(){
+    this.visible = !this.visible;
+  }
 
   constructor() { }
 

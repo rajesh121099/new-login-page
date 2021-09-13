@@ -48,3 +48,111 @@
   }
 
  
+
+  /* billing */
+
+  .example-card {
+    padding-left: 100px;
+  max-width: 300%;
+  
+  
+}
+  .div{
+    padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+  .toggle{
+      background-color: blue;
+      color: white;
+     
+  }
+
+  .borderradius{
+      border-radius: 5px;
+      width: 100%;
+  }
+
+  .mat-button-toggle{
+   text-align: center;
+   padding: 12px 300px 10px 230px !important
+  }
+
+
+  .demo-table {
+    width: 100%;
+  }
+  
+  .mat-column-demo-position {
+    width: 32px;
+    border-right: 1px solid currentColor;
+    padding-right: 24px;
+    text-align: center;
+  }
+  
+  .mat-column-demo-name {
+    padding-left: 16px;
+    font-size: 20px;
+  }
+  
+  .mat-column-demo-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-demo-symbol {
+    width: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+
+
+  /* security */
+
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* .example-full-width {
+    width: 100%;
+  } */
+
+  .div{
+      padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .example-card {
+      padding-left: 100px;
+    max-width: 300%;
+    
+    
+  }
+  
+
+  .input-width{
+      width: 300%;
+     
+  }
+
+  .toggle{
+      background-color: blue;
+      color: white;
+     
+  }
+
+  .borderradius{
+      border-radius: 5px;
+      width: 100%;
+  }
+
+  .mat-button-toggle{
+   text-align: center;
+    padding: 12px 300px 10px 230px !important
+  }
+
+ 
