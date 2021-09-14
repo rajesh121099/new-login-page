@@ -18,8 +18,11 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { BillingsComponent } from './billings/billings.component';
-import {MatTableModule} from '@angular/material/table';
+
 import { SecurityComponent } from './security/security.component';
+import {MatTableModule} from '@angular/material/table';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import { SecurityComponent } from './security/security.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatFormFieldModule,MatSelectModule,MatGridListModule,MatInputModule,MatCardModule,MatButtonModule,MatButtonToggleModule,MatTableModule,
+    BrowserAnimationsModule,MatFormFieldModule,MatSelectModule,MatGridListModule,MatInputModule,MatCardModule,MatButtonModule,MatButtonToggleModule,MatTableModule,FormsModule,ReactiveFormsModule,MatTabsModule,
     RouterModule.forRoot([
       {path:'',component:LoginComponent},
       {path:'Login',component:LoginComponent},

@@ -15,7 +15,7 @@
   }
   .example-card {
       padding-left: 100px;
-    max-width: 300%;
+    max-width: 100%;
     
     
   }
@@ -26,8 +26,8 @@
     
   }
 
-  .input-width{
-      width: 130%;
+  .input-width1{
+      width: 100%;
      
   }
 
@@ -106,6 +106,24 @@
     font-weight: bold;
   }
   
+  table {
+    width: 100%;
+  }
+
+  .bill-pad{
+    padding-left: 20%;
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* security */
@@ -132,10 +150,22 @@
     
     
   }
+
+  .mat-tab :active{
+    background-color: blue;
+  }
+
+  .mat-tab-label :active{
+    background-color: blue;
+  }
+
+  .mat-tab-group :active{
+    background-color: blue;
+  }
   
 
   .input-width{
-      width: 300%;
+      width: 200%;
      
   }
 
@@ -143,6 +173,9 @@
       background-color: blue;
       color: white;
      
+  }
+  .md-tab.md-active{
+    background-color: blue;
   }
 
   .borderradius{
@@ -155,4 +188,27 @@
     padding: 12px 300px 10px 230px !important
   }
 
- 
+ /* tabs */
+
+ /* mat-tab-group {
+  margin-bottom: 48px;
+  color: blue;
+
+} */
+
+mat-tab-group{
+  text-align: center;
+  padding: 12px 300px 10px 230px !important
+}
+
+/* .example-stretched-tabs {
+  max-width: 800px;
+} */
+
+/* mat-tab-label {
+  width: 70%;
+} */
+
+.color{
+  background-color: blue;
+}
