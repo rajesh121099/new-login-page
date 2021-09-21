@@ -23,6 +23,13 @@ import { SecurityComponent } from './security/security.component';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalenderComponent } from './calender/calender.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,12 +38,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     ForgetpasswordComponent,
     AccountsettingComponent,
     BillingsComponent,
-    SecurityComponent
+    SecurityComponent,
+    CalenderComponent 
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule,NgbModalModule,CommonModule,FlatpickrModule,
     BrowserAnimationsModule,MatFormFieldModule,MatSelectModule,MatGridListModule,MatInputModule,MatCardModule,MatButtonModule,MatButtonToggleModule,MatTableModule,FormsModule,ReactiveFormsModule,MatTabsModule,
     RouterModule.forRoot([
       {path:'',component:LoginComponent},
@@ -44,7 +52,10 @@ import {MatTabsModule} from '@angular/material/tabs';
       {path:'forgetpassword',component:ForgetpasswordComponent},
       {path:'signin',component:SigninComponent},
 
-    ])
+    ]),
+    CalendarModule.forRoot({ 
+      provide: DateAdapter,
+       useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent]
