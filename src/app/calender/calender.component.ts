@@ -36,12 +36,6 @@ import { Component,   ChangeDetectionStrategy,
     },
   };
   
-
-
-
-
-
-
 @Component({
   selector: 'app-calender',
   templateUrl: './calender.component.html',
@@ -55,6 +49,9 @@ export class CalenderComponent  {
 
   CalendarView = CalendarView;
 
+
+
+
   viewDate: Date = new Date();
 
   modalData!: {
@@ -63,19 +60,19 @@ export class CalenderComponent  {
   };
 
   actions: CalendarEventAction[] = [
+   
+   
+   
+   
+   
+   
+   
     {
-      label: '<i class="fas fa-fw fa-pencil-alt"></i>',
-      a11yLabel: 'Edit',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
-      },
-    },
-    {
-      label: '<i class="fas fa-fw fa-trash-alt"></i>',
-      a11yLabel: 'Delete',
+      label: '',
+      a11yLabel: '',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.events = this.events.filter((iEvent) => iEvent !== event);
-        this.handleEvent('Deleted', event);
+        
       },
     },
   ];
@@ -86,7 +83,7 @@ export class CalenderComponent  {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'A 3 days event',
       color: colors.red,
       actions: this.actions,
       allDay: true,
@@ -125,7 +122,6 @@ export class CalenderComponent  {
 
   activeDayIsOpen: boolean = true;
 
-
   constructor(private modal: NgbModal) { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -136,7 +132,7 @@ export class CalenderComponent  {
       ) {
         this.activeDayIsOpen = false;
       } else {
-        this.activeDayIsOpen = true;
+        this.activeDayIsOpen = false;
       }
       this.viewDate = date;
     }

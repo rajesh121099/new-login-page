@@ -1,13 +1,18 @@
-<div >
+<div  style="width: 98%; padding-left: 0.5%; padding-top: 1%;">
 <div class="row text-center">
-  <div class="col-md-4">
-    <div class="btn-group">
-      <div
+  <div class="col-md-4" style="padding-left: 3%;">
+    <div  class="btn btn-primary" style="width: 30%;">
+     + create new
+    </div>
+    <div class="btn-group" style="padding-left: 26%;">
+    
+      <div 
         class="btn btn-primary"
         mwlCalendarPreviousView
         [view]="view"
         [(viewDate)]="viewDate"
         (viewDateChange)="closeOpenMonthViewDay()"
+       
       >
         Previous
       </div>
@@ -58,150 +63,93 @@
     </div>
   </div>
 </div>
-<br />
-<div [ngSwitch]="view">
-  <mwl-calendar-month-view
-    *ngSwitchCase="CalendarView.Month"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    [activeDayIsOpen]="activeDayIsOpen"
-    (dayClicked)="dayClicked($event.day)"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)"
-  >
-  </mwl-calendar-month-view>
-  <mwl-calendar-week-view
-    *ngSwitchCase="CalendarView.Week"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)"
-  >
-  </mwl-calendar-week-view>
-  <mwl-calendar-day-view
-    *ngSwitchCase="CalendarView.Day"
-    [viewDate]="viewDate"
-    [events]="events"
-    [refresh]="refresh"
-    (eventClicked)="handleEvent('Clicked', $event.event)"
-    (eventTimesChanged)="eventTimesChanged($event)"
-  >
-  </mwl-calendar-day-view>
-</div>
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <p>Drag and Drop Your event or Click in the calender</p>
+  <div class="row">
+    <div class="col-1"><span class="dot"></span></div>
+    <div class="col">High priorty events</div>
+  </div><br>
+  <div class="row">
+    <div class="col-1"><span class="dot1"></span></div>
+    <div class="col">Family events</div>
+  </div><br>
+  <div class="row">
+    <div class="col-1"><span class="dot2"></span></div>
+    <div class="col">none-Priority events</div>
+  </div><br>
+  <mat-checkbox style="padding-left: 5%;">Remove after drop</mat-checkbox>
+  </mat-drawer>
+  <mat-drawer-content>
+    
 
-<!-- Everything you see below is just for the demo, you don't need to include it in your app -->
-
-<br /><br /><br />
-<!--  -->
-<!-- <h3> -->
-  <!-- Edit events -->
-  <!-- <button class="btn btn-primary float-right" (click)="addEvent()"> -->
-    <!-- Add new -->
-  <!-- </button> -->
-  <!-- <div class="clearfix"></div> -->
-<!-- </h3> -->
-
-<!-- <div class="table-responsive"> -->
-  <!-- <table class="table table-bordered"> -->
-    <!-- <thead> -->
-      <!-- <tr> -->
-        <!-- <th>Title</th> -->
-        <!-- <th>Primary color</th> -->
-        <!-- <th>Secondary color</th> -->
-        <!-- <th>Starts at</th> -->
-        <!-- <th>Ends at</th> -->
-        <!-- <th>Remove</th> -->
-      <!-- </tr> -->
-    <!-- </thead> -->
-<!--  -->
-    <!-- <tbody> -->
-      <!-- <tr *ngFor="let event of events"> -->
-        <!-- <td> -->
-          <!-- <input -->
-            <!-- type="text" -->
-            <!-- class="form-control" -->
-            <!-- [(ngModel)]="event.title" -->
-            <!-- (keyup)="refresh.next()" -->
-          <!-- /> -->
-        <!-- </td> -->
-        <!-- <td> -->
-          <!-- <input -->
-            <!-- type="color" -->
-            <!-- [(ngModel)]="event.color.primary" -->
-            <!-- (change)="refresh.next()" -->
-          <!-- /> -->
-        <!-- </td> -->
-        <!-- <td> -->
-          <!-- <input -->
-            <!-- type="color" -->
-            <!-- [(ngModel)]="event.color.secondary" -->
-            <!-- (change)="refresh.next()" -->
-          <!-- /> -->
-        <!-- </td> -->
-        <!-- <td> -->
-          <!-- <input -->
-            <!-- class="form-control" -->
-            <!-- type="text" -->
-            <!-- mwlFlatpickr -->
-            <!-- [(ngModel)]="event.start" -->
-            <!-- (ngModelChange)="refresh.next()" -->
-            <!-- [altInput]="true" -->
-            <!-- [convertModelValue]="true" -->
-            <!-- [enableTime]="true" -->
-            <!-- dateFormat="Y-m-dTH:i" -->
-            <!-- altFormat="F j, Y H:i" -->
-            <!-- placeholder="Not set" -->
-          <!-- /> -->
-        <!-- </td> -->
-        <!-- <td> -->
-          <!-- <input -->
-            <!-- class="form-control" -->
-            <!-- type="text" -->
-            <!-- mwlFlatpickr -->
-            <!-- [(ngModel)]="event.end" -->
-            <!-- (ngModelChange)="refresh.next()" -->
-            <!-- [altInput]="true" -->
-            <!-- [convertModelValue]="true" -->
-            <!-- [enableTime]="true" -->
-            <!-- dateFormat="Y-m-dTH:i" -->
-            <!-- altFormat="F j, Y H:i" -->
-            <!-- placeholder="Not set" -->
-          <!-- /> -->
-        <!-- </td> -->
-        <!-- <td> -->
-          <!-- <button class="btn btn-danger" (click)="deleteEvent(event)"> -->
-            <!-- Delete -->
+    <div style="width: 98%; height: 100%; padding-left: 0.5%;" >
+      <br />
+      <div [ngSwitch]="view">
+        <mwl-calendar-month-view
+          *ngSwitchCase="CalendarView.Month"
+          [viewDate]="viewDate"
+          
+          [events]="events"
+          [refresh]="refresh"
+          [activeDayIsOpen]="activeDayIsOpen"
+          (dayClicked)="dayClicked($event.day)"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)"
+        >
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view
+          *ngSwitchCase="CalendarView.Week"
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)"
+        >
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view
+          *ngSwitchCase="CalendarView.Day"
+          [viewDate]="viewDate"
+          [events]="events"
+          [refresh]="refresh"
+          (eventClicked)="handleEvent('Clicked', $event.event)"
+          (eventTimesChanged)="eventTimesChanged($event)"
+        >
+        </mwl-calendar-day-view>
+      </div>
+      <br /><br /><br />
+      <!-- <ng-template #modalContent let-close="close"> -->
+        <!-- <div class="modal-header"> -->
+          <!-- <h5 class="modal-title">Event action occurred</h5> -->
+          <!-- <button type="button" class="close" (click)="close()"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
           <!-- </button> -->
-        <!-- </td> -->
-      <!-- </tr> -->
-    <!-- </tbody> -->
-  <!-- </table> -->
-<!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="modal-body"> -->
+          <!-- <div> -->
+            <!-- Action: -->
+            <!-- <pre>{{ modalData?.action }}</pre> -->
+          <!-- </div> -->
+          <!-- <div> -->
+            <!-- Event: -->
+            <!-- <pre>{{ modalData?.event | json }}</pre> -->
+          <!-- </div> -->
+        <!-- </div> -->
+        <!-- <div class="modal-footer"> -->
+          <!-- <button type="button" class="btn btn-outline-secondary" (click)="close()"> -->
+            <!-- OK -->
+          <!-- </button> -->
+        <!-- </div> -->
+      <!-- </ng-template> -->
+      </div>
 
-<ng-template #modalContent let-close="close">
-  <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
-    <button type="button" class="close" (click)="close()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
-    </div>
-    <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
-    </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="close()">
-      OK
-    </button>
-  </div>
-</ng-template>
+  </mat-drawer-content>
+</mat-drawer-container>
+
 </div>
+
+
+
+
+
 

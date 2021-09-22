@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule  } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -29,6 +30,8 @@ import { CalenderComponent } from './calender/calender.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,NgbModalModule,CommonModule,FlatpickrModule,
+    AppRoutingModule,NgbModalModule,CommonModule,MatSidenavModule,MatCheckboxModule,
     BrowserAnimationsModule,MatFormFieldModule,MatSelectModule,MatGridListModule,MatInputModule,MatCardModule,MatButtonModule,MatButtonToggleModule,MatTableModule,FormsModule,ReactiveFormsModule,MatTabsModule,
     RouterModule.forRoot([
       {path:'',component:LoginComponent},
@@ -53,6 +56,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
       {path:'signin',component:SigninComponent},
 
     ]),
+    FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ 
       provide: DateAdapter,
        useFactory: adapterFactory })

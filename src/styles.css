@@ -19,3 +19,16 @@ color: white;
 
 }
 
+
+.cal-month-view .cal-cell-top {
+    min-height: 125px;
+    flex: 1;
+}
+
+
+
+
+.mat-drawer{
+    height: 100vh;
+    width: 20%;
+}
