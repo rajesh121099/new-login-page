@@ -82,7 +82,10 @@
   <mat-checkbox style="padding-left: 5%;">Remove after drop</mat-checkbox>
   </mat-drawer>
   <mat-drawer-content>
-    
+    <ng-template #customCellTemplate let-day="day">
+      
+      
+    </ng-template>
 
     <div style="width: 98%; height: 100%; padding-left: 0.5%;" >
       <br />
@@ -90,7 +93,7 @@
         <mwl-calendar-month-view
           *ngSwitchCase="CalendarView.Month"
           [viewDate]="viewDate"
-          [events]="events"
+        
           [cellTemplate]="customCellTemplate"
           [refresh]="refresh"
           [activeDayIsOpen]="activeDayIsOpen"
@@ -98,8 +101,8 @@
           (eventClicked)="handleEvent('Clicked', $event.event)"
           (eventTimesChanged)="eventTimesChanged($event)"
         >
-        <ng-template #customCellTemplate></ng-template>
-         
+        
+        
         </mwl-calendar-month-view>
         <!-- <mwl-calendar-week-view -->
           <!-- *ngSwitchCase="CalendarView.Week" -->
@@ -149,6 +152,7 @@
   </mat-drawer-content>
 </mat-drawer-container>
 
+ 
 </div>
 
 
