@@ -30,7 +30,12 @@ h3 {
     display: inline-block;
     background-color:green;
   }
-
+  .success {background-color: #04AA6D;}
+  .label {
+    color: white;
+    padding: 8px;
+    font-family: Arial;
+  }
 
 
 
