@@ -81,8 +81,8 @@ export class CalenderComponent {
   events: CalendarEvent[] = [
     // 
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 0),
+        start: '2021-09-08T13:00',
+        end: '2021-09-08T13:30',
       title: 'ssdgfhghtgfhtygj',
       color: colors.red,
       actions: this.actions,

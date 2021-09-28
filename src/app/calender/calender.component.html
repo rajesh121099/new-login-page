@@ -84,7 +84,9 @@
   <mat-drawer-content>
     <ng-template #customCellTemplate let-day="day">
       
-      
+      <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber'}}
+        
+      </span>
     </ng-template>
 
     <div style="width: 98%; height: 100%; padding-left: 0.5%;" >
@@ -93,7 +95,6 @@
         <mwl-calendar-month-view
           *ngSwitchCase="CalendarView.Month"
           [viewDate]="viewDate"
-        
           [cellTemplate]="customCellTemplate"
           [refresh]="refresh"
           [activeDayIsOpen]="activeDayIsOpen"
